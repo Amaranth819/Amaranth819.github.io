@@ -142,8 +142,6 @@ $$
    \pi_\theta(s) = [\pi_{com}(s),\pi_{side}(s)]
    $$
 
-3. 
-
 
 
 **Drawbacks**:
@@ -172,7 +170,7 @@ where
 
 Idea: A scatter plot drawn over a single cycle, where x and y-axes of the 2D plot correspond to the position and velocity respectively.
 
-​	In this paper, the author proposes to use phase-portrait index (PPO) to numerically quantify the similarity between two phase-portraits.
+​	In this paper, the author proposes to use phase-portrait index (PPI) to numerically quantify the similarity between two phase-portraits.
 
 
 
