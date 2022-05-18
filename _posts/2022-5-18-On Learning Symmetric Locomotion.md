@@ -1,6 +1,22 @@
+ <head>
+     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+     <script type="text/x-mathjax-config">
+         MathJax.Hub.Config({
+             tex2jax: {
+             skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+             inlineMath: [['$','$']]
+             }
+         });
+     </script>
+ </head>
+
+
+
 ---
+
 layout: post
 title: On Learning Symmetric Locomotion
+
 ---
 
 
@@ -10,8 +26,6 @@ Paper link: [[link]](https://www.cs.ubc.ca/~van/papers/2019-MIG-symmetry/index.h
 ## 1. Motivation
 
 1. Exploiting the motion symmetry in DRL-based locomotion tasks can (1) learn more realistic locomotion patterns, (2) result in 2x faster learning speedup.
-
-
 
 
 
