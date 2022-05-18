@@ -9,12 +9,13 @@ title: On Learning Symmetric Locomotion
 
 Paper link: [[link]](https://www.cs.ubc.ca/~van/papers/2019-MIG-symmetry/index.html)
 
+   
 ## 1. Motivation
 
 1. Exploiting the motion symmetry in DRL-based locomotion tasks can (1) learn more realistic locomotion patterns, (2) result in 2x faster learning speedup.
 
 
-
+   
 ## 2. Contribution
 
 Four methods of incorporating symmetry into the learning process:
@@ -27,9 +28,7 @@ Four methods of incorporating symmetry into the learning process:
 where **DUP** and **NET** are new, **LOSS** and **PHASE** are present.
 
 
-
-
-
+   
 ## 3. Symmetry
 
 ### 3.1 Background
@@ -39,6 +38,7 @@ where **DUP** and **NET** are new, **LOSS** and **PHASE** are present.
 
 
 **Goal**: find a symmetric policy $\pi_\theta$ following holds for all states $s \in \mathcal{S}$
+   
 $$
 \pi_\theta (\mathcal{M}_s(s)) = \mathcal{M}_a(\pi_\theta(s))
 $$
@@ -48,7 +48,6 @@ $$
 
 1. Encouraging or constraining the learned policies to be symmetric does not guarantee a symmetric gait, but instead may produce staggered poses.
 2. It is possible but ineffective to directly specify gait symmetry in the reward function.
-
 
 
 ### 3.2 Duplicate Tuples (DUP)
@@ -70,12 +69,14 @@ $$
 ### 3.3 Auxiliary Loss (LOSS)
 
 **Idea**: create a symmetry loss
+   
 $$
 \begin{gather}
 L_{sym}(\theta) = \sum^T_{i=1}||\pi_\theta(s_t) - \mathcal{M}_a(\pi_\theta(\mathcal{M}_s(s_t)))||^2 \\
 \pi_\theta = \arg\min_\theta L_{PPO}(\theta) + \omega L_{sym}(\theta)
 \end{gather}
 $$
+
 **Drawbacks**:
 
 1. Although the symmetry loss improves the sample efficiency, it does not always work for training.
@@ -84,9 +85,10 @@ $$
 
 ### 3.4 Phase-Based Mirroring (PHASE)
 
-**Idea**: Introduce a phase variable $\phi \in [0,1)$. An alternative strategy for additional robustness is to perform a phase-reset at each foot strike. For example, set $\phi=0$ upon left-foot strike and $\phi=0.5$ upon right-foot strike.
+**Idea**: Introduce a phase variable $\phi \in [0,1)$. An alternative strategy for additional robustness is to perform a phase-reset at each foot strike. For example, set $$\phi=0$$ upon left-foot strike and $\phi=0.5$ upon right-foot strike.
 
 **Formulation**: To enforce symmetry
+   
 $$
 a_t = 
 \left\{
@@ -96,6 +98,7 @@ a_t =
     \end{array}
 \right.
 $$
+
 **Drawbacks**:
 
 1. In phase-reset, abrupt changes may exist at $\phi=0.5$ when the phase is strictly computed as a function of time.
@@ -111,17 +114,22 @@ $$
 **Proof**:
 
 Consider
+   
 $$
 \begin{gather}
 a = [a_l,a_r] \\
 \mathcal{M}_a(a) = [a_r,a_l]
 \end{gather}
 $$
+   
 Define a symmetric policy consisting of a network $f$ as follows
+   
 $$
 \pi_{side}(s) = [f(s,\mathcal{M}_s(s)),f(\mathcal{M}_s(s),s)]
 $$
+   
 Then
+   
 $$
 \begin{aligned}
 \pi_{side}(\mathcal{M}_s(s)) 
@@ -138,6 +146,7 @@ $$
 1. Impose symmetry by $\pi_{side}(s)$ for left/right body parts, and define $\pi_{com}=h(s)+h(\mathcal{M}_s(s))$ for those body parts invariant to left/right mirroring like the torso and head.
 
 2. Define the policy as
+   
    $$
    \pi_\theta(s) = [\pi_{com}(s),\pi_{side}(s)]
    $$
@@ -152,26 +161,22 @@ $$
 
 
 
-
+   
 ## 4. Gait Symmetry Matrices
 
 ​	After training, it is important to evaluate how well the methods achieve gait symmetry.
 
-(1) Robinson Symmetry Index (SI) [[Yu et al. 2018]](https://arxiv.org/abs/1801.08093)
+(1) Robinson Symmetry Index (SI) [[Yu et al. 2018]](https://arxiv.org/abs/1801.08093) 
+   
 $$
-SI = \frac{2|X_R-X_L|}{X_L+X_R}\cdot 100
-$$
-where
+SI = \frac{2|X_R-X_L|}{X_L+X_R}\cdot 100 
+$$ 
 
+where
 - $X_R$: a scalar feature of interest, for example the duration of the stance phase for the right leg.
 - $X_L$: the counterpart of the left leg.
 
-(2) The phase-portrait [[Hsiao-Wecksler et al. 2010]](https://www.mdpi.com/2073-8994/2/2/1135)
-
-Idea: A scatter plot drawn over a single cycle, where x and y-axes of the 2D plot correspond to the position and velocity respectively.
-
-​	In this paper, the author proposes to use phase-portrait index (PPI) to numerically quantify the similarity between two phase-portraits.
-
+(2) The phase-portrait [[Hsiao-Wecksler et al. 2010]](https://www.mdpi.com/2073-8994/2/2/1135): A scatter plot drawn over a single cycle, where x and y-axes of the 2D plot correspond to the position and velocity respectively. In this paper, the author proposes to use phase-portrait index (PPI) to numerically quantify the similarity between two phase-portraits.
 
 
 ## 5. Experiments

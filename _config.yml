@@ -1,4 +1,5 @@
-markdown: typora
+markdown: kramdown
+usemathjax: true
 
 #
 # This file contains configuration flags to customize your site
