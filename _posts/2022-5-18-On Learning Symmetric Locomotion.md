@@ -1,4 +1,9 @@
-# On Learning Symmetric Locomotion
+---
+layout: post
+title: On Learning Symmetric Locomotion
+---
+
+
 
 Paper link: [[link]](https://www.cs.ubc.ca/~van/papers/2019-MIG-symmetry/index.html)
 
