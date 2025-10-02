@@ -1,7 +1,6 @@
 # headers and icon 
-title: khang nguyen
-info: phd cs @ uta
-icon-pic: assets/img/mandu_icon.png
+title: Xulin Chen
+info: Ph.D. student @ Syracuse
 
 # exclude these items when generated website in _site/index.html
 exclude:
