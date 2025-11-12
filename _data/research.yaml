@@ -33,16 +33,16 @@ projects:
   - title: "MS-PPO: Morphological-Symmetry-Equivariant Policy for Legged Robot Locomotion"
     system-name: 
     gif: assets/img/msppo_teaser.png
-    conference: Submitted to ICRA 2026 
-    conference-web: https://2026.ieee-icra.org/
+    conference: # Submitted # to ICRA 2026 
+    conference-web: # https://2026.ieee-icra.org/
     status:
     authors: Sizhe Wei*, <u>Xulin Chen*</u>, Fengze Xie, Garrett E. Katz, Zhenyu Gan, Lu Gan.
     pdf: # https://mkhangg.com/assets/papers/nguyen2024volumetric.pdf
-    code: # https://github.com/mkhangg/refined_panoptic_mapping
+    # code: # https://github.com/mkhangg/refined_panoptic_mapping
     demo: https://paper-page.github.io/MS-PPO/
-    slides: # https://mkhangg.com/assets/slides/iros24b_slides.pdf
-    talk: # https://youtu.be/vQZMQApcTCY
-    poster: # https://mkhangg.com/assets/posters/iros24b_poster.pdf
+    # slides: # https://mkhangg.com/assets/slides/iros24b_slides.pdf
+    # talk: # https://youtu.be/vQZMQApcTCY
+    # poster: # https://mkhangg.com/assets/posters/iros24b_poster.pdf
     abstract-less: Reinforcement learning has recently enabled impressive locomotion performance on quadrupeds and other articulated robots, yet most policy architectures remain morphology- and symmetry-agnostic, leading to inefficient training and weak generalization. This work introduces MS-PPO, a morphology-symmetry-equivariant policy learning framework that encodes robot kinematic structure and morphological symmetries directly into the policy network. We construct a graph-based neural architecture that is provably equivariant to morphological group actions, ensuring consistent responses under sagittal-plane reflections while maintaining  
     abstract-more: invariance in value estimation. This design eliminates the need for reward shaping or data augmentation, which are typically required to enforce symmetry. We evaluate MS-PPO in simulation on Unitree Go2 and Xiaomi Cyberdog2 robots across multiple locomotion tasks, including trotting, pronking, slope walking, and bipedal turning, and further deploy policies on hardware. Extensive experiments show that MS-PPO achieves superior training stability, command generalization ability, and sample efficiency in challenging tasks, compared to state-of-the-art baselines. These findings demonstrate that embedding both kinematic structure and morphological symmetry into policy learning provides a powerful inductive bias for legged robot locomotion control.
 
@@ -50,11 +50,11 @@ projects:
   - title: "Towards Dynamic Quadrupedal Gaits: A Symmetry-Guided RL Hierarchy Enables Free Gait Transitions at Varying Speeds"
     system-name: 
     gif: assets/img/symmetry-guided-rl.png
-    conference: Submitted to ICRA 2026 
-    conference-web: https://2026.ieee-icra.org/
+    conference: # Submitted # to ICRA 2026
+    conference-web: # https://2026.ieee-icra.org/
     status:
-    authors: Jiayu Ding*, <u>Xulin Chen*</u>, Garrett E. Katz, and Zhenyu Gan.
-    pdf: # https://mkhangg.com/assets/papers/nguyen2024volumetric.pdf
+    authors: Jiayu Ding*, <u>Xulin Chen*</u>, Garrett E. Katz, Zhenyu Gan.
+    pdf: https://arxiv.org/pdf/2510.10455
     code: https://anonymous.4open.science/r/go2_symm_rl-F623/
     demo: # https://paper-page.github.io/MS-PPO/
     slides: # https://mkhangg.com/assets/slides/iros24b_slides.pdf
@@ -66,16 +66,16 @@ projects:
 
   - title: "Lipschitz-Regularized Critic Leads to Policy Robustness against Transition Dynamics Uncertainty"
     system-name: 
-    gif: assets/img/wcve-pgdlc.png
-    conference: Submitted to IEEE RA-L 
-    conference-web: https://www.ieee-ras.org/publications/ra-l
+    gif: assets/img/ppo-pgdlc.png
+    conference: # Submitted # to IEEE RA-L
+    conference-web: # https://www.ieee-ras.org/publications/ra-l
     status:
     authors: <u>Xulin Chen*</u>, Ruipeng Liu, Zhenyu Gan, Garrett E. Katz.
     pdf: # https://mkhangg.com/assets/papers/nguyen2024volumetric.pdf
-    code: https://github.com/Amaranth819/rl-repo
+    code: # https://github.com/Amaranth819/rl-repo
     demo: # https://paper-page.github.io/MS-PPO/
     slides: # https://mkhangg.com/assets/slides/iros24b_slides.pdf
     talk: # https://youtu.be/vQZMQApcTCY
     poster: # https://mkhangg.com/assets/posters/iros24b_poster.pdf
-    abstract-less: "Uncertainties in transition dynamics pose a critical challenge in reinforcement learning (RL), often resulting in performance degradation of trained policies when deployed on hardware. Many robust reinforcement learning (robust RL) approaches follow two strategies: enforcing smoothness in actor or actor-critic modules with Lipschitz regularization, or learning robust Bellman operators. The former does not address the impact of critic-only Lipschitz regularization "
-    abstract-more: "on policy robustness, while the latter lacks comprehensive validation in real-world scenarios. Motivated by prior work, we propose WCVE-PGDLC, an algorithm based on Proximal Policy Optimization that integrates Projected Gradient Descent to solve the robust Bellman operator and learns a Lipschitz-regularized critic. Experimental results on two classic control tasks and a real-world locomotion task indicate that WCVE-PGDLC improves policy robustness and smoothness compared to baselines. "
+    abstract-less: "Uncertainties in transition dynamics pose a critical challenge in reinforcement learning (RL), often resulting in performance degradation of trained policies when deployed on hardware. Many robust RL approaches follow two strategies: enforcing smoothness in actor or actor-critic modules with Lipschitz regularization, or learning robust Bellman operators. However, the first strategy does not investigate the impact of critic-only Lipschitz regularization on "
+    abstract-more: policy robustness, while the second lacks comprehensive validation in real-world scenarios. Building on this gap and prior work, we propose PPO-PGDLC, an algorithm based on Proximal Policy Optimization (PPO) that integrates Projected Gradient Descent (PGD) with a Lipschitz-regularized critic (LC). The PGD component calculates the adversarial state within an uncertainty set to approximate the robust Bellman operator, and the Lipschitz-regularized critic further improves the smoothness of learned policies. Experimental results on two classic control tasks and one real-world robotic locomotion task demonstrates that, compared to several baseline algorithms, PPO-PGDLC achieves better performance and predicts smoother actions under environmental perturbations.

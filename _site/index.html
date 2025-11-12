@@ -143,7 +143,7 @@
             
         </h2>
         <p></p>
-        I'm currently a Ph.D. student in Computer/Information Science and Engineering (CISE) at Mind-Body Lab, Syracuse University, advised by Prof. Garrett E. Katz.
+        I'm currently a Ph.D. student in Computer/Information Science and Engineering (CISE) at Syracuse University, advised by Prof. Garrett E. Katz.
         <p></p>
               
         <p></p>
@@ -206,7 +206,7 @@
             
             <b>MS-PPO: Morphological-Symmetry-Equivariant Policy for Legged Robot Locomotion</b>
             <br />
-            <i><a href="https://2026.ieee-icra.org/" target="_blank" rel="noopener">Submitted to ICRA 2026</a></i> 
+            <i><a href="" target="_blank" rel="noopener"></a></i> 
             
             <br />
             Sizhe Wei*, <u>Xulin Chen*</u>, Fengze Xie, Garrett E. Katz, Zhenyu Gan, Lu Gan.
@@ -238,12 +238,12 @@
             
             <b>Towards Dynamic Quadrupedal Gaits: A Symmetry-Guided RL Hierarchy Enables Free Gait Transitions at Varying Speeds</b>
             <br />
-            <i><a href="https://2026.ieee-icra.org/" target="_blank" rel="noopener">Submitted to ICRA 2026</a></i> 
+            <i><a href="" target="_blank" rel="noopener"></a></i> 
             
             <br />
-            Jiayu Ding*, <u>Xulin Chen*</u>, Garrett E. Katz, and Zhenyu Gan.
+            Jiayu Ding*, <u>Xulin Chen*</u>, Garrett E. Katz, Zhenyu Gan.
             <br />
-             <a href="">[PDF]</a> 
+             <a href="https://arxiv.org/pdf/2510.10455" target="_blank" rel="noopener">[PDF]</a> 
              | <a href="https://anonymous.4open.science/r/go2_symm_rl-F623/" target="_blank" rel="noopener">[CODE]</a> 
             
             
@@ -264,28 +264,28 @@
                 <div class="project" data-filter="">
     <div class="row mb-4">
         <div class="col-sm-4">
-            <img width="100%" height="auto" class="w-full rounded-lg" src="assets/img/wcve-pgdlc.png" />
+            <img width="100%" height="auto" class="w-full rounded-lg" src="assets/img/ppo-pgdlc.png" />
         </div>
         <div class="col-sm-8">
             
             <b>Lipschitz-Regularized Critic Leads to Policy Robustness against Transition Dynamics Uncertainty</b>
             <br />
-            <i><a href="https://www.ieee-ras.org/publications/ra-l" target="_blank" rel="noopener">Submitted to IEEE RA-L</a></i> 
+            <i><a href="" target="_blank" rel="noopener"></a></i> 
             
             <br />
             <u>Xulin Chen*</u>, Ruipeng Liu, Zhenyu Gan, Garrett E. Katz.
             <br />
              <a href="">[PDF]</a> 
-             | <a href="https://github.com/Amaranth819/rl-repo" target="_blank" rel="noopener">[CODE]</a> 
+            
             
             
             
             
             <br />
             <u><b><i>Abstract</i></b>:</u> 
-            Uncertainties in transition dynamics pose a critical challenge in reinforcement learning (RL), often resulting in performance degradation of trained policies when deployed on hardware. Many robust reinforcement learning (robust RL) approaches follow two strategies: enforcing smoothness in actor or actor-critic modules with Lipschitz regularization, or learning robust Bellman operators. The former does not address the impact of critic-only Lipschitz regularization 
+            Uncertainties in transition dynamics pose a critical challenge in reinforcement learning (RL), often resulting in performance degradation of trained policies when deployed on hardware. Many robust RL approaches follow two strategies: enforcing smoothness in actor or actor-critic modules with Lipschitz regularization, or learning robust Bellman operators. However, the first strategy does not investigate the impact of critic-only Lipschitz regularization on 
             <span class="collapse">
-                on policy robustness, while the latter lacks comprehensive validation in real-world scenarios. Motivated by prior work, we propose WCVE-PGDLC, an algorithm based on Proximal Policy Optimization that integrates Projected Gradient Descent to solve the robust Bellman operator and learns a Lipschitz-regularized critic. Experimental results on two classic control tasks and a real-world locomotion task indicate that WCVE-PGDLC improves policy robustness and smoothness compared to baselines. 
+                policy robustness, while the second lacks comprehensive validation in real-world scenarios. Building on this gap and prior work, we propose PPO-PGDLC, an algorithm based on Proximal Policy Optimization (PPO) that integrates Projected Gradient Descent (PGD) with a Lipschitz-regularized critic (LC). The PGD component calculates the adversarial state within an uncertainty set to approximate the robust Bellman operator, and the Lipschitz-regularized critic further improves the smoothness of learned policies. Experimental results on two classic control tasks and one real-world robotic locomotion task demonstrates that, compared to several baseline algorithms, PPO-PGDLC achieves better performance and predicts smoother actions under environmental perturbations.
             </span> 
             <span> <a href="#" data-toggle="collapse" onclick="toggleText(this)" id="link-">... See More</a></span>
         </div>                       
