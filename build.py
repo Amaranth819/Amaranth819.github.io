@@ -3,7 +3,7 @@ from pybtex.database.input import bibtex
 
 def get_personal_data():
     name = ["Xulin", "Chen"]
-    email = "xchen168"
+    email = "xchen168@syr.edu"
     scholar = "https://scholar.google.com/citations?hl=en&user=-RQOxnAAAAAJ"
     github = "Amaranth819"
     linkedin = "xulin-chen-3884b8189"
