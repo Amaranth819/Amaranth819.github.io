@@ -339,7 +339,7 @@ def get_index_html():
                         {bio_text}
                     </div>
                     <div class="col-md-4" style="">
-                        <img src="assets/img/profile.png" class="img-thumbnail mx-auto d-block" width="280px" alt="Profile picture">
+                        <img src="assets/img/profile.png" class="img-thumbnail mx-auto d-block" width="200px" alt="Profile picture">
                     </div>
                 </div>
                 <div class="row" style="margin-top: 1em;">
