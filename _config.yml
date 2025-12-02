@@ -1,9 +1,0 @@
-# headers and icon 
-title: Xulin Chen
-info: Ph.D. student @ Syracuse
-
-# exclude these items when generated website in _site/index.html
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - README.md

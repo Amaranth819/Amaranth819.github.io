@@ -1,0 +1,52 @@
+---
+---
+
+@STRING{CVPR = {Proc. IEEE Conf. on Computer Vision and Pattern	Recognition (CVPR)}}
+@STRING{ECCV = {Proc. of the European Conf. on Computer Vision (ECCV)}}
+@STRING{ICCV = {Proc. of the IEEE International Conf. on Computer Vision (ICCV)}}
+@STRING{THREEDV = {Proc. of the International Conf. on 3D Vision (3DV)}}
+@STRING{NEURIPS = {Advances in Neural Information Processing Systems (NeurIPS)}}
+@STRING{ARXIV = {arXiv.org}}
+@STRING{ICLR = {Proc. of the International Conf. on Learning Representations (ICLR)}}
+
+@STRING{UNDER_REVIEW = {Under Review}}
+
+
+@article{wei2025msppo,
+  title={MS-PPO: Morphological-Symmetry-Equivariant Policy for Legged Robot Locomotion},
+  author={Wei*, Sizhe and Chen*, Xulin and Xie, Fengze and E. Katz, Garrett and Gan, Zhenyu and Gan, Lu},
+  journal = {},
+  year={2025},
+  booktitle = UNDER_REVIEW,
+  abs = {Reinforcement learning has recently enabled impressive locomotion capabilities on legged robots; however, most policy architectures remain morphology- and symmetry-agnostic, leading to inefficient training and limited generalization. This work introduces MS-PPO, a morphological-symmetry-equivariant policy learning framework that encodes robot kinematic structure and morphological symmetries directly into the policy network. We construct a morphology-informed graph neural architecture that is provably equivariant with respect to the robot's morphological symmetry group actions, ensuring consistent policy responses under symmetric states while maintaining invariance in value estimation. This design eliminates the need for tedious reward shaping or costly data augmentation, which are typically required to enforce symmetry. We evaluate \method{} in simulation on Unitree Go2 and Xiaomi CyberDog2 robots across diverse locomotion tasks, including trotting, pronking, slope walking, and bipedal turning, and further deploy the learned policies on hardware. Extensive experiments show that \method{} achieves superior training stability, symmetry generalization ability, and sample efficiency in challenging locomotion tasks, compared to state-of-the-art baselines. These findings demonstrate that embedding both kinematic structure and morphological symmetry into policy learning provides a powerful inductive bias for legged robot locomotion control.},
+  img = {assets/img/publications/msppo_teaser.png},
+  code = {https://paper-page.github.io/MS-PPO/}
+}
+
+
+@article{ding2025towards,
+  title={Towards Dynamic Quadrupedal Gaits: A Symmetry-Guided RL Hierarchy Enables Free Gait Transitions at Varying Speeds},
+  author={Ding*, Jiayu and Chen*, Xulin and E. Katz, Garrett and Gan, Zhenyu},
+  journal={arXiv preprint arXiv:2510.10455},
+  year={2025},
+  booktitle = UNDER_REVIEW,
+  pdf = {https://arxiv.org/abs/2510.10455},
+  abs = {Quadrupedal robots exhibit a wide range of viable gaits, but generating specific footfall sequences often requires laborious expert tuning of numerous variables, such as touch-down and lift-off events and holonomic constraints for each leg. This paper presents a unified reinforcement learning framework for generating versatile quadrupedal gaits by leveraging the intrinsic symmetries and velocity-period relationship of dynamic legged systems. We propose a symmetry-guided reward function design that incorporates temporal, morphological, and time-reversal symmetries. By focusing on preserved symmetries and natural dynamics, our approach eliminates the need for predefined trajectories, enabling smooth transitions between diverse locomotion patterns such as trotting, bounding, half-bounding, and galloping. Implemented on the Unitree Go2 robot, our method demonstrates robust performance across a range of speeds in both simulations and hardware tests, significantly improving gait adaptability without extensive reward tuning or explicit foot placement control. This work provides insights into dynamic locomotion strategies and underscores the crucial role of symmetries in robotic gait design.},
+  img = {assets/img/publications/symmetry-guided-rl.png},
+  code = {https://anonymous.4open.science/r/go2_symm_rl-F623/},
+}
+
+
+@article{chen2024explicit,
+  title={Lipschitz-Regularized Critic Leads to Policy Robustness against Transition Dynamics Uncertainty},
+  author={Chen*, Xulin and Liu, Ruipeng and Gan, Zhenyu and E. Katz, Garrett},
+  journal={arXiv preprint arXiv:2404.13879},
+  year={2025},
+  booktitle = UNDER_REVIEW,
+  pdf = {https://arxiv.org/abs/2404.13879},
+  abs = {Uncertainties in transition dynamics pose a critical challenge in reinforcement learning (RL), often resulting in performance degradation of trained policies when deployed on hardware. Many robust RL approaches follow two strategies: enforcing smoothness in actor or actor-critic modules with Lipschitz regularization, or learning robust Bellman operators. However, the first strategy does not investigate the impact of critic-only Lipschitz regularization on policy robustness, while the second lacks comprehensive validation in real-world scenarios. Building on this gap and prior work, we propose PPO-PGDLC, an algorithm based on Proximal Policy Optimization (PPO) that integrates Projected Gradient Descent (PGD) with a Lipschitz-regularized critic (LC). The PGD component calculates the adversarial state within an uncertainty set to approximate the robust Bellman operator, and the Lipschitz-regularized critic further improves the smoothness of learned policies. Experimental results on two classic control tasks and one real-world robotic locomotion task demonstrates that, compared to several baseline algorithms, PPO-PGDLC achieves better performance and predicts smoother actions under environmental perturbations.},
+  img = {assets/img/publications/ppo-pgdlc.png},
+}
+
+
+
