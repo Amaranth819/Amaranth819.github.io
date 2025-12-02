@@ -14,7 +14,7 @@ def get_personal_data():
                 </p>
                 <p>
                     <span style="font-weight: bold;">Interests:</span>
-                    My current research is centered on Robotics and Reinforcement Learning, but I'm also interested in Neural Network Theory, Generative Models and Embodied AI.
+                    My current research is centered on Robotics and Reinforcement Learning, but I'm also interested in Neural Network Theory, Generative Models, and Embodied AI.
                 </p>
                 <p>
                     <span style="font-weight: bold;">Education:</span>
