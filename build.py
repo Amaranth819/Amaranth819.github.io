@@ -345,6 +345,7 @@ def get_index_html():
                 <div class="row" style="margin-top: 1em;">
                     <div class="col-sm-12" style="">
                         <h4>Selected Papers</h4>
+                        <p>* incidates the first or co-first author.</p>
                         {pub}
                     </div>
                 </div>
